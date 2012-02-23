@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Progress info:</b>
+  <%= @student.progress_info %>
+</p>
+
+<p>
+  <b>Answered questions info:</b>
+  <%= @student.answered_questions_info %>
+</p>
+
+<p>
+  <b>Knowledge point info:</b>
+  <%= @student.knowledge_point_info %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

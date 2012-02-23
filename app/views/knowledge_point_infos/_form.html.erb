@@ -1,0 +1,29 @@
+<%= form_for(@knowledge_point_info) do |f| %>
+  <% if @knowledge_point_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@knowledge_point_info.errors.count, "error") %> prohibited this knowledge_point_info from being saved:</h2>
+
+      <ul>
+      <% @knowledge_point_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student_id %><br />
+    <%= f.number_field :student_id %>
+  </div>
+  <div class="field">
+    <%= f.label :knowledge_point_id %><br />
+    <%= f.number_field :knowledge_point_id %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.number_field :level %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

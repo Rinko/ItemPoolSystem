@@ -1,0 +1,32 @@
+<h1>Listing structures</h1>
+
+<table>
+  <tr>
+    <th>Book</th>
+    <th>Unit</th>
+    <th>Chapter</th>
+    <th>Title</th>
+    <th>Parent</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @structures.each do |structure| %>
+  <tr>
+    <td><%= structure.book_id %></td>
+    <td><%= structure.unit %></td>
+    <td><%= structure.chapter %></td>
+    <td><%= structure.title %></td>
+    <td><%= structure.parent_id %></td>
+    <td><%= structure.weight %></td>
+    <td><%= link_to 'Show', book_structure_path(params[:book_id],structure) %></td>
+    <td><%= link_to 'Edit', edit_book_structure_path(params[:book_id],structure) %></td>
+    <td><%= link_to 'Destroy', book_structure_path(params[:book_id],structure), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Structure', new_book_structure_path(params[:book_id]) %>

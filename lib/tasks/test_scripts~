@@ -1,0 +1,3 @@
+stu = Student.find 1
+que = Question.find 1
+Student.progress_query_by(stu.id,que)

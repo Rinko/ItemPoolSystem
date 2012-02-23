@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  question: MyText
+  answer: MyText
+  resource_ids: MyString
+  difficulty: 1
+  if_judge: false
+
+two:
+  question: MyText
+  answer: MyText
+  resource_ids: MyString
+  difficulty: 1
+  if_judge: false

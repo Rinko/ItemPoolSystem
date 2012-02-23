@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  book: 
+  unit: 1
+  chapter: 1
+  title: MyString
+  parent: 
+
+two:
+  book: 
+  unit: 1
+  chapter: 1
+  title: MyString
+  parent: 

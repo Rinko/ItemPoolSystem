@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Student:</b>
+  <%= @knowledge_point_info.student_id %>
+</p>
+
+<p>
+  <b>Knowledge point:</b>
+  <%= @knowledge_point_info.knowledge_point_id %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @knowledge_point_info.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_knowledge_point_info_path(@knowledge_point_info) %> |
+<%= link_to 'Back', knowledge_point_infos_path %>

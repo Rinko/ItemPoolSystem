@@ -1,0 +1,26 @@
+<h1>Listing knowledge_points</h1>
+
+<table>
+  <tr>
+    <th>书目--章节</th>
+    <th>Specific</th>   
+  </tr>
+
+<% @knowledge_points.each do |knowledge_point| %>
+  <tr>
+    <td>
+      <% knowledge_point.structures.each do |structure| %>
+        <%=h structure.book.title %>--<%=h structure.title %><br/>
+      <% end %>
+    </td>
+    <td><%= knowledge_point.specific %></td>
+    <td><%= link_to 'Show', knowledge_point %></td>
+    <td><%= link_to 'Edit', edit_knowledge_point_path(knowledge_point) %></td>
+    <td><%= link_to 'Destroy', knowledge_point, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Knowledge point', new_knowledge_point_path %>

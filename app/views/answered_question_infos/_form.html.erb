@@ -1,0 +1,33 @@
+<%= form_for(@answered_question_info) do |f| %>
+  <% if @answered_question_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answered_question_info.errors.count, "error") %> prohibited this answered_question_info from being saved:</h2>
+
+      <ul>
+      <% @answered_question_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student_id %><br />
+    <%= f.number_field :student_id %>
+  </div>
+  <div class="field">
+    <%= f.label :question_id %><br />
+    <%= f.number_field :question_id %>
+  </div>
+  <div class="field">
+    <%= f.label :right_or_wrong %><br />
+    <%= f.check_box :right_or_wrong %>
+  </div>
+  <div class="field">
+    <%= f.label :wrong_answer %><br />
+    <%= f.text_field :wrong_answer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

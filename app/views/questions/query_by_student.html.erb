@@ -1,0 +1,22 @@
+<%= form_tag :action => "post_by_student" do |f| %>
+    <%=hidden_field_tag :id,@student.id %>
+  <h1>Listing questions</h1>
+  <table>
+    <tr>
+      <th>Difficulty</th>
+      <th>Question</th>
+      <th>Answer</th>
+    </tr>
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%=@difficulty_hash[question.id] %></td>
+      <td><%=h question.question %></td>
+      <td><%=text_field_tag "answers[#{question.id}]" %></td>
+      <td><%= question.answer %></td>
+    </tr>
+  <% end %>
+  </table>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>

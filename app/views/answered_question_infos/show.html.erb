@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Student:</b>
+  <%= @answered_question_info.student_id %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @answered_question_info.question_id %>
+</p>
+
+<p>
+  <b>Right or wrong:</b>
+  <%= @answered_question_info.right_or_wrong %>
+</p>
+
+<p>
+  <b>Wrong answer:</b>
+  <%= @answered_question_info.wrong_answer %>
+</p>
+
+
+<%= link_to 'Edit', edit_answered_question_info_path(@answered_question_info) %> |
+<%= link_to 'Back', answered_question_infos_path %>

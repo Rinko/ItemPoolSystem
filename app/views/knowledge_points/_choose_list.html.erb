@@ -1,0 +1,13 @@
+<div>
+  <tr>
+    <% @knowledge_points.each do |knowledge_point| %>
+    <td><%= knowledge_point.specific %><%=check_box_tag "knowledge_point_ids[]",knowledge_point.id %></td>
+    <td>
+      所属书目、章节：
+      <% knowledge_point.structures.each do |structure| %>
+        <%=h structure.book.title %>--<%=h structure.title %><br/>
+      <% end %>
+    </td>
+    <% end %>
+  </tr>
+</div>

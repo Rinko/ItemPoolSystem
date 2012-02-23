@@ -1,0 +1,1 @@
+rails g sacffold Books publisher:integer subject:integer grade:integer term:integer title:tring

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  publisher: 1
+  subject: 1
+  grade: 1
+  term: 1
+  title: MyString
+
+two:
+  publisher: 1
+  subject: 1
+  grade: 1
+  term: 1
+  title: MyString

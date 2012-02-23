@@ -1,0 +1,27 @@
+<h1>Listing knowledge_point_infos</h1>
+
+<table>
+  <tr>
+    <th>Student</th>
+    <th>Knowledge point</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @knowledge_point_infos.each do |knowledge_point_info| %>
+  <tr>
+    <td><%= knowledge_point_info.student_id %></td>
+    <td><%= knowledge_point_info.knowledge_point_id %></td>
+    <td><%= knowledge_point_info.level %></td>
+    <td><%= link_to 'Show', knowledge_point_info %></td>
+    <td><%= link_to 'Edit', edit_knowledge_point_info_path(knowledge_point_info) %></td>
+    <td><%= link_to 'Destroy', knowledge_point_info, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Knowledge point info', new_knowledge_point_info_path %>

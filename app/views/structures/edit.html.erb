@@ -1,0 +1,6 @@
+<h1>Editing structure</h1>
+
+<%= render :partial => 'form',:locals => { :form_method => :put }  %>
+
+<%= link_to 'Show', book_structure_path(params[:book_id],@structure)%>
+<%= link_to 'Back', book_structures_path %>

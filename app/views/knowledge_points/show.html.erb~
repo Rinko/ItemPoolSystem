@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>书目--章节</b>
+  <% @knowledge_point.structures.each do |structure| %>
+     <%=h structure.book.title %>--<%=h structure.title %><br/>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_knowledge_point_path(@knowledge_point) %> |
+<%= link_to 'Back', knowledge_points_path %>

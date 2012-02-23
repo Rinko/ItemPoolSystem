@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @question.question %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @question.answer %>
+</p>
+
+<p>
+  <b>Resource ids:</b>
+  <%= @question.resource_ids %>
+</p>
+
+<p>
+  <b>Difficulty:</b>
+  <%= @question.difficulty %>
+</p>
+
+<p>
+  <b>If judge:</b>
+  <%= @question.if_judge %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
