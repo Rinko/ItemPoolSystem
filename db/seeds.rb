@@ -6,6 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
+# encoding: utf-8
 @parameter_root = Parameter.create(
   :value => "root",
   :parent_id => 0
