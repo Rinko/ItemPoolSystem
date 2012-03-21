@@ -1,4 +1,6 @@
 class KnowledgePointInfosController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
+
   # GET /knowledge_point_infos
   # GET /knowledge_point_infos.json
   def index

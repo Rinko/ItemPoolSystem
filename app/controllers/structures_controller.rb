@@ -1,4 +1,5 @@
 class StructuresController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
   # GET /structures
   # GET /structures.json
   def index
@@ -83,7 +84,13 @@ class StructuresController < ApplicationController
     end
   end
   
-  def choose_list
+  def remote_checkbox_list
+    @structures = Structure.find_all_by_book_id(params[:book_id])
+    respond_to do |format|
+      format.js
+    end
+  end
+  def remote_link_list
     @structures = Structure.find_all_by_book_id(params[:book_id])
     respond_to do |format|
       format.js

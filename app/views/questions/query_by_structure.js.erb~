@@ -1,0 +1,3 @@
+$("#questions").replaceWith("<div id=\"questions\"><%= escape_javascript(render(:partial => 'choose_list'))%></div>")
+
+

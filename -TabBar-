@@ -1,1 +1,1 @@
-[1:20120205140552_create_knowledge_points_questions.rb ][2:20120205140554_create_knowledge_point_structures.rb ][3:20120205140556_create_structures_students.rb]*
+[1:sessions_controller.rb ]+[2:routes.rb ][3:admin_controller.rb ][4:application_controller.rb ][5:question.rb ][6:questions_controller.rb]*+[7:administrators_controller.rb ][8:answered_question_infos_controller.rb ][9:books_controller.rb ][10:knowledge_point_infos_controller.rb ][11:knowledge_points_controller.rb ][12:structures_controller.rb ][13:parameters_controller.rb ][14:students_controller.rb]*

@@ -1,0 +1,5 @@
+<% @structures.each do |structure| %>
+  <tr>
+    <%= link_to structure.title,remote_query_by_structure_knowledge_points_url(:structure_id => structure.id), :method => :get,:remote => true %>
+  </tr>
+<% end %>

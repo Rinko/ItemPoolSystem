@@ -2,11 +2,15 @@
 rails g scaffold Books publisher:integer subject:integer grade:integer term:integer title:string -f
 rails g scaffold Questions  question:text answer:text resource_ids:string difficulty:integer if_judge:boolean -f
 rails g scaffold KnowledgePoints specific:text -f
-rails g migration CreateKnowledgePointsQuestions knowledge_point:references question:references -f
 rails g scaffold Structures book:references unit:integer chapter:integer title:string parent:references -f
-rails g migration CreateKnowledgePointStructures knowledge_point:references structure:references -f
 rails g scaffold Parameters key:integer value:string parent:references -f
 rails g scaffold Students name:string -f
 rails g scaffold KnowledgePointInfos student:references knowledge_point:references level:integer -f
 rails g scaffold AnsweredQuestionInfos student:references question:references right_or_wrong:boolean wrong_answer:string -f
+
+
+rails g migration CreateKnowledgePointsQuestions knowledge_point:references question:references -f
+rails g migration CreateKnowledgePointStructures knowledge_point:references structure:references -f
 rails g migration CreateStructuresStudents student:references structure:references -f
+
+rails g scaffold Users name:string hashed_password:string salt:string

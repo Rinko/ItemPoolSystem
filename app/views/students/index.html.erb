@@ -9,10 +9,9 @@
 
 <% @students.each do |student| %>
   <tr>
-    <td><%= student.progress_info %></td>
-    <td><%= student.answered_questions_info %></td>
-    <td><%= student.knowledge_point_info %></td>
-    <td><%= link_to 'Show', student %></td>
+    <td><%= student.name %></td>
+    <td><%= student.hashed_password %></td>
+    <td><%= student.salt %></td>    <td><%= link_to 'Show', student %></td>
     <td><%= link_to 'Edit', edit_student_path(student) %></td>
     <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

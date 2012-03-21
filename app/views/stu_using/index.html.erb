@@ -1,0 +1,7 @@
+<div id="content">
+  <div id="about">
+    <%=link_to "特定题目查询", view_by_student_questions_url%>
+    <%=link_to "历史答题回顾", student_history_answered_question_infos_url%>
+    <%=link_to "系统选题", query_by_student_questions_url(:difficulty_min => -999,:difficulty_max => 999) %>
+  </div>
+</div>

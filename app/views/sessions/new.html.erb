@@ -1,0 +1,29 @@
+<div class="flash">
+  <% if !flash[:alert].nil? %>
+    <p class="alert"><%= flash[:alert] %></p>
+  <% end %>
+</div>
+<div>
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Please Log In</legend>
+      <div>
+#        <label for="name">Name:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+      <div>
+        <label for="user_type">User Type:</label>
+        Student<%= radio_button_tag :user_type, "Student" %>
+        Manager<%= radio_button_tag :user_type, "Administrator" %>
+      </div>
+      <div>
+        <%= submit_tag "Login" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+

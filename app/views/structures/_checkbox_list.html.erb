@@ -1,0 +1,6 @@
+<% @structures.each do |structure| %>
+  <tr>
+    <td><%=h structure.title %></td>
+    <td><%=check_box_tag "structure_ids[]",structure.id %></td>
+  </tr>
+<% end %>

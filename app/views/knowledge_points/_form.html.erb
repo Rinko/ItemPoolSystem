@@ -1,8 +1,4 @@
-<div>
-  <% @books.each do |book| %>
-    <%= link_to book.title,choose_list_book_structures_url(:book_id => book), :method => :get,:remote => true %>
-  <% end %>
-</div>
+<%=render :partial => 'books/all_books_ajax_checkbox' %>
 
 <%= form_for(@knowledge_point) do |f| %>
   <% if @knowledge_point.errors.any? %>

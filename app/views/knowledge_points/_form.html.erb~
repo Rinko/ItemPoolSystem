@@ -1,8 +1,5 @@
-<div>
-  <% @books.each do |book| %>
-  <%= link_to_remote book.title,:update => "structures",:url => choose_list_book_structures_url(:book_id => book), :method => :get %>
-  <% end %>
-</div>
+<%=render :partial => 'books/all_books_ajax' %>
+
 <%= form_for(@knowledge_point) do |f| %>
   <% if @knowledge_point.errors.any? %>
     <div id="error_explanation">
@@ -17,6 +14,7 @@
   <% end %>
 
   <div class="field">
+    <div id="structures"></div>
     <%= f.label :specific %><br />
     <%= f.text_area :specific %>
   </div>

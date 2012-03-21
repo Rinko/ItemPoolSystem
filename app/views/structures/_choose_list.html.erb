@@ -1,7 +1,5 @@
-111111111111111
 <% @structures.each do |structure| %>
   <tr>
-    <td><%=h structure.title %></td>
-    <td><%=check_box_tag "structure_ids[]",structure.id %></td>
+    <%= link_to structure.title,_url(:structure_id => structure.id), :method => :get,:remote => true %>
   </tr>
 <% end %>

@@ -12,3 +12,5 @@ rails g scaffold AnsweredQuestionInfos student:references question:references ri
 rails g migration CreateKnowledgePointsQuestions knowledge_point:references question:references -f
 rails g migration CreateKnowledgePointStructures knowledge_point:references structure:references -f
 rails g migration CreateStructuresStudents student:references structure:references -f
+
+rails g scaffold Administrators name:string hashed_password:string salt:string

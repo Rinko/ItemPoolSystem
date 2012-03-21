@@ -1,0 +1,2 @@
+module StuUsingHelper
+end

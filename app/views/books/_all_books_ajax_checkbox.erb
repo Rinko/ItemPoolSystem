@@ -1,0 +1,5 @@
+<div>
+  <% @books.each do |book| %>
+    <%= link_to book.title,remote_checkbox_list_book_structures_url(:book_id => book), :method => :get,:remote => true %>
+  <% end %>
+</div>

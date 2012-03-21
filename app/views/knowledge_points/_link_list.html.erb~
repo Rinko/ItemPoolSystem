@@ -1,0 +1,5 @@
+<% @knowledge_points.each do |knowledge_point| %>
+  <tr>
+    <%= link_to knowledge_point.title,remote_query_by_knowledge_point_questions_url(:knowledge_point_id => knowledge_point.id), :method => :get,:remote => true %>
+  </tr>
+<% end %>

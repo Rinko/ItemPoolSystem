@@ -1,5 +1,21 @@
 Ips::Application.routes.draw do
-  resources :answered_question_infos
+  get "stu_using/index"
+
+  get "admin/index"
+
+  controller :sessions do 
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  resources :administrators
+
+  resources :answered_question_infos do
+    collection do 
+      get :student_history
+    end
+  end
 
   resources :knowledge_point_infos
 
@@ -7,12 +23,17 @@ Ips::Application.routes.draw do
 
   resources :parameters
 
-  resources :knowledge_points
+  resources :knowledge_points do 
+    collection do
+      get :remote_query_by_structure
+    end
+  end
 
   resources :books do
 	  resources :structures do
 	    collection do
-	      get :choose_list
+	      get :remote_checkbox_list
+        get :remote_link_list
 	    end
 	  end
   end
@@ -20,7 +41,9 @@ Ips::Application.routes.draw do
   resources :questions do
     collection do
 	    get :query_by_student
-	    post :post_by_student
+      get :view_by_student
+      get :remote_query_by_knowledge_point
+      post :post_by_student
 	  end
   end
 
@@ -73,7 +96,7 @@ Ips::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+#  root :to => 'admin#index'
 
   # See how all your routes lay out with "rake routes"
 

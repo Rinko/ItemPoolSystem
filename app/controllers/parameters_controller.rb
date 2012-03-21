@@ -1,4 +1,5 @@
 class ParametersController < ApplicationController
+  before_filter :admin_authorize
   # GET /parameters
   # GET /parameters.json
   def index

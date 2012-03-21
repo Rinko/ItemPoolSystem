@@ -12,18 +12,16 @@
   <% end %>
 
   <div class="field">
-    <p>
-    <%= f.label :progress_info %><br />
-    <%= f.text_field :progress_info %>
-  </p>
-  <p>
-    <%= f.label :answered_questions_info %><br />
-    <%= f.text_field :answered_questions_info %>
-  </p>
-  <p>
-    <%= f.label :knowledge_point_info %><br />
-    <%= f.text_field :knowledge_point_info %>
-  </p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
     <%= f.submit %>

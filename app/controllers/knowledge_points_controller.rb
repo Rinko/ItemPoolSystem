@@ -1,4 +1,5 @@
 class KnowledgePointsController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
   #new 和 edit 有时间的话使用拖拽，暂时维持这样
   # GET /knowledge_points
   # GET /knowledge_points.json
@@ -84,6 +85,12 @@ class KnowledgePointsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to knowledge_points_url }
       format.json { head :ok }
+    end
+  end
+  def remote_query_by_structure
+    @knowledge_points = Structure.find_by_id(params[:structure_id]).knowledge_points
+    respond_to do |format|
+      format.js  
     end
   end
 end

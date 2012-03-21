@@ -1,0 +1,3 @@
+<%=render :partial => 'books/all_books_ajax_link' %>
+<div id="structures"></div>
+<div id="knowledge_points"></div>

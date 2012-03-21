@@ -7,6 +7,9 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 # encoding: utf-8
+@admin = Administrator.create(:name => "admin")
+@admin.password = "123"
+@admin.save
 @parameter_root = Parameter.create(
   :value => "root",
   :parent_id => 0
@@ -299,6 +302,8 @@
 @student1 = Student.create(
   :name => "学生一"
 )
+@student1.password = "123"
+@student1.save
 @student1.progresses << @structure5
 
 #@answered_question_info1 = @student1.answered_question_infos.create(

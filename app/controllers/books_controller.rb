@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
+
   # GET /books
   # GET /books.json
   def index

@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
   BOOK_WEIGHT = 5
   UNIT_WEIGHT = 3
   CHAPTER_WEIGHT = 1
@@ -102,7 +103,8 @@ class QuestionsController < ApplicationController
   def query_by_student
     @difficulty_hash = {}
     @questions = []
-    @student = Student.find(params[:student_id])
+#    @student = Student.find(params[:student_id])
+    @student = Student.find(session[:user_id])
     @student.lack_knowledge_points.each do |lack_knowledge_point|
      lack_knowledge_point.questions.each do |question|
        difficulty = difficulty_judge(@student,question)
@@ -119,8 +121,12 @@ class QuestionsController < ApplicationController
 
   def post_by_student
     @student = Student.find(params[:id])
+    @answered_question_infos = []
     @questions = []
-    params[:answers].each_key {|key| @questions << Question.find(key.to_i) }
+    params[:answers].each_key do |key| 
+      @questions << Question.find(key.to_i) 
+      @answered_question_infos << AnsweredQuestionInfo.find_by_question_id_and_student_id(key.to_i,@student.id)
+    end
     @questions.each do |question|  
       if question.answer == params[:answers]["#{question.id}"]
         @student.answered_question_infos.create(:question_id => question.id,:right_or_wrong => true)
@@ -142,7 +148,10 @@ class QuestionsController < ApplicationController
         end
       end
     end
-    index
+#    index
+    respond_to do |format|
+      format.html {render :file => 'answered_question_infos/post_by_student'}
+    end
   end
   
   def difficulty_judge(student,question)
@@ -208,5 +217,18 @@ class QuestionsController < ApplicationController
       end
     end
     return @difficulty
+  end
+
+  def view_by_student
+    @books = Book.all
+    respond_to do |format|
+      format.html  
+    end
+  end
+  def remote_query_by_knowledge_point
+    @questions = KnowledgePoint.find_by_id(params[:knowledge_point_id]).questions
+    respond_to do |format|
+      format.js  
+    end
   end
 end

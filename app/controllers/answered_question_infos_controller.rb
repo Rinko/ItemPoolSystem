@@ -1,4 +1,5 @@
 class AnsweredQuestionInfosController < ApplicationController
+  before_filter :admin_authorize ,:only =>[:new,:edit,:create,:destory,:update]
   # GET /answered_question_infos
   # GET /answered_question_infos.json
   def index
@@ -78,6 +79,14 @@ class AnsweredQuestionInfosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to answered_question_infos_url }
       format.json { head :ok }
+    end
+  end
+
+  def student_history
+    stu = Student.find_by_id session[:user_id]
+    @answered_question_infos = stu.answered_question_infos
+    respond_to do |format|
+      format.html
     end
   end
 end

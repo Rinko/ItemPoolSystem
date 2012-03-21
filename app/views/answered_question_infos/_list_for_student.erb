@@ -1,0 +1,23 @@
+<h1>Listing answered_question_infos</h1>
+
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Right or wrong</th>
+    <th>Wrong answer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @answered_question_infos.each do |answered_question_info| %>
+  <tr>
+    <td><%= answered_question_info.question_id %></td>
+    <td><%= answered_question_info.right_or_wrong %></td>
+    <td><%= answered_question_info.wrong_answer %></td>
+    <td><%= link_to 'Show', answered_question_info %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
